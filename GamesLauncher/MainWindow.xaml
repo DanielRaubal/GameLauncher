@@ -1,0 +1,149 @@
+﻿<Window x:Class="GamesLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:effects="http://schemas.microsoft.com/winfx/2006/xaml/presentation/effects"
+        
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="532.5" Width="800" Background="#FF2E2E2E" Loaded="Window_Loaded">
+
+
+
+
+    <Grid >
+
+
+        <Image  Source="Images/CounterStrikeBack.png" Stretch="UniformToFill" Grid.ColumnSpan="3">
+            <Image.Effect>
+                <BlurEffect Radius="6"/>
+            </Image.Effect>
+        </Image>
+
+
+
+        <Viewbox >
+            <Grid RenderTransformOrigin="0.5,0.5" Width="776" Height="492">
+
+
+                <Rectangle Height="492" VerticalAlignment="Top" HorizontalAlignment="Left" Width="776">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="Black" Opacity="0.6"/>
+                    </Rectangle.Fill>
+                    <!--<Rectangle.OpacityMask >
+                        <ImageBrush ImageSource="Images/CounterStrikeBack.png"/>
+                    </Rectangle.OpacityMask>-->
+                </Rectangle>
+
+
+                <!--<Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>-->
+
+                <!--Source="Images/CounterStrike.png"-->
+
+                <Image gif:ImageBehavior.AnimatedSource="Images/CSGo.gif" HorizontalAlignment="Left" Margin="10,17,0,200" Width="177"/>
+
+                <Button Content="PLAY" HorizontalAlignment="Left" Margin="210,452,0,0" VerticalAlignment="Top" Width="541" Height="30" BorderBrush="Transparent" Foreground="#7F000000" FontSize="13" FontFamily="Segoe UI Symbol" Background="#FFFFB30F" BorderThickness="3" Click="Button_Click" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <TextBlock HorizontalAlignment="Left" Margin="210,17,0,0" TextWrapping="Wrap" Text="Counter-Strike: Global Offensive" VerticalAlignment="Top" Width="541" Height="33" FontSize="21" FontFamily="Segoe UI Semibold" Foreground="White"/>
+
+                <TextBlock  HorizontalAlignment="Left" Margin="210,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="537" Height="159" FontFamily="Segoe UI Semilight" Foreground="White" FontSize="10"><Run Text="Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago.CS: &#xA; &#xA; GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.). &#xA; &#xA; Counter-Strike took the gaming industry by surprise when the unlikely MOD became the most played online PC action game in the world almost immediately after its release in August 1999, said Doug Lombardi at Valve. For the past 12 years, it has continued to be one of the most-played games in the world, headline competitive gaming tournaments and selling over 25 million units worldwide across the franchise. CS: GO promises to expand on CS' award-winning gameplay and deliver it to gamers on the PC as well as the next gen consoles and the Mac."/></TextBlock>
+
+
+                <!--<Image gif:ImageBehavior.AnimatedSource="Images/CSGo.gif" />-->
+
+                <GroupBox BorderThickness="0" Header="playing this hour" HorizontalAlignment="Left" Height="51" Margin="10,297,0,0" VerticalAlignment="Top" Width="177" Foreground="#FFFFDE6D" BorderBrush="#FFFFAE00" Background="#1CFFA200">
+                    <TextBlock Name="PlayingThisHourText" TextWrapping="Wrap" FontSize="18" FontFamily="Segoe UI Semibold" Height="31" VerticalAlignment="Top" Foreground="#FFFFAE00" Margin="0,0,-2,-3"><Run 
+                        Text="100.000.000"/></TextBlock>
+                </GroupBox>
+
+
+                <GroupBox BorderThickness="0" Header="daily peak" HorizontalAlignment="Left" Height="51" Margin="10,348,0,0" VerticalAlignment="Top" Width="177" Foreground="#FFFFDE6D" BorderBrush="#FFFFAE00" Background="#1CFFA200">
+                    <TextBlock Name="DailyPeakText" TextWrapping="Wrap" FontSize="18" FontFamily="Segoe UI Semibold" Height="29" VerticalAlignment="Top" Foreground="#FFFFAE00" Margin="0,0,-2,-1"><Run 
+                        Text="100.000.000"/></TextBlock>
+                </GroupBox>
+
+
+                <GroupBox BorderThickness="0" Header="all time peak" HorizontalAlignment="Left" Height="51" Margin="10,399,0,0" VerticalAlignment="Top" Width="177" Foreground="#FFFFDE6D" BorderBrush="#FFFFAE00" Background="#1CFFA200">
+                    <TextBlock Name="AllTimePeakText" TextWrapping="Wrap" FontSize="18" FontFamily="Segoe UI Semibold" Height="30" VerticalAlignment="Top" Foreground="#FFFFAE00" Margin="0,0,-2,-2"><Run 
+                            Text="100.000.000"/></TextBlock>
+                </GroupBox>
+
+
+                <lvc:CartesianChart  Margin="210,206,25,54" >
+
+                    <lvc:CartesianChart.SeriesColors>
+                        <lvc:ColorsCollection>
+                            <Color>#FFFDBF54</Color>
+                        </lvc:ColorsCollection>
+                    </lvc:CartesianChart.SeriesColors>
+
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis>
+                            <lvc:Axis.Separator>
+                                <lvc:Separator StrokeThickness="1" 
+                                               Stroke="#FFAC8646"></lvc:Separator>
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisX>
+
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis>
+                            <lvc:Axis.Separator>
+                                <lvc:Separator StrokeThickness="1" 
+                                               Stroke="#FFAC8646"></lvc:Separator>
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+
+
+                    <lvc:CartesianChart.Series>
+                        <lvc:LineSeries PointGeometrySize="0"
+                                        Values="8055141,805105608,3495944531,6346384,5120820,8051059,7432097" Foreground="#FFFFC446">
+                            <lvc:LineSeries.Fill>
+                                <SolidColorBrush 
+                                   Color="#FFF9963A" Opacity="0.15"/>
+                            </lvc:LineSeries.Fill>
+
+                        </lvc:LineSeries>
+                    </lvc:CartesianChart.Series>
+
+                </lvc:CartesianChart>
+
+
+
+                <!--
+                <lvc:CartesianChart.Series Margin="210,191,25,51" >
+
+                    <lvc:LineSeries StrokeThickness="2" Stroke="Red" PointGeometrySize="0"
+                                    Values="30,20,20,20,20">
+                        
+                    </lvc:LineSeries>
+                    
+                </lvc:CartesianChart.Series>
+-->
+
+
+
+            </Grid>
+
+        </Viewbox>
+
+
+
+
+    </Grid>
+
+
+
+</Window>
