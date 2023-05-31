@@ -1,2 +1,2 @@
 # GameLauncher
-<img src="GamesLauncher.png"/>
+<img src="GameLauncher.PNG"/>
